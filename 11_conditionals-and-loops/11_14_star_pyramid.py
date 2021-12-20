@@ -22,3 +22,6 @@
 # * * *
 #
 # HINT: Think of nested for loops!
+
+for star in range(6):
+    print(star * "*")

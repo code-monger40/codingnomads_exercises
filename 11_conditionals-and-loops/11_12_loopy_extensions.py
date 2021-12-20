@@ -8,3 +8,8 @@
 # for example flags and conditional statements.
 
 filename = "operators.pdf"
+
+if filename.endswith(".pdf"):
+    print("This file is a pdf")
+else:
+    print("File is not a pdf")
