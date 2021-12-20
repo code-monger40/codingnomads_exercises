@@ -6,3 +6,10 @@
 
 start = 1
 stop = 100
+
+count = 0
+
+for i in range(start, stop+1):
+    count += i
+
+print(count)
