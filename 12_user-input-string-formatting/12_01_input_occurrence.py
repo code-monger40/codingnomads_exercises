@@ -4,3 +4,11 @@
 # String input: hello world
 # Letter input: o
 # Result: 4
+
+string = input("Enter a word or a phrase: ")
+letter = input("Enter a letter: ")
+
+if letter in string:
+    print(string.index(letter))
+else:
+    print("Index not found!")
