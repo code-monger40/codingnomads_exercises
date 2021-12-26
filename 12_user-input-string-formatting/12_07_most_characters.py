@@ -11,17 +11,19 @@
 
 # hello world greetings
 message = input("Enter in a phrase: ")
-# longest = ["hello", "world", "greetings"]
-# print(max(longest))
-longest_word = ""
-word_count = 0
-for word in message.split():
-    print(word)
-        
-    # print(longest_word)
-    # if len(longest_word) > len(word):
+message1 = input("Enter in a phrase: ")
+message3 = input("Enter in a phrase: ")
+
+if len(message) > len(message1) and len(message) > len(message3):
+    print(len(message), message)
+elif len(message1) > len(message) and len(message1) > len(message3):
+    print(len(message1), message1)
+elif len(message3) > len(message) and len(message3) > len(message1):
+    print(len(message3), message3)
+else:
+    print("No clear max length!")
+
         
 
-# print(longest_word)
 
 
