@@ -6,15 +6,94 @@
 # Hard-code a word that needs to be guessed in the script
 
 # Print an explanation to the user
-
+print("Let's play hangman! Guess the following word...")
 # Display the word as a sequence of blanks, e.g. "_ _ _ _ _" for "hello"
 
 # Ask for user input
-
 # Allow only single-character alphabetic input
+hangman_pics = ['''
+  +---+
+  |   |
+      |
+      |
+      |
+      |
+=========''', '''
+  +---+
+  |   |
+  O   |
+      |
+      |
+      |
+=========''', '''
+  +---+
+  |   |
+  O   |
+  |   |
+      |
+      |
+=========''', '''
+  +---+
+  |   |
+  O   |
+ /|   |
+      |
+      |
+=========''', '''
+  +---+
+  |   |
+  O   |
+ /|\  |
+      |
+      |
+=========''', '''
+  +---+
+  |   |
+  O   |
+ /|\  |
+ /    |
+      |
+=========''', '''
+  +---+
+  |   |
+  O   |
+ /|\  |
+ / \  |
+      |
+=========''']
+word = "district"
+blanks = len(word) * ["_ "]
+tries = 7
+wrong_letters = []
+hangman = [""]
+print("".join(blanks))
+
+for i in hangman_pics[l]:
+    print()
+
+while len(wrong_letters) != tries:
+    word = "district"
+    guess = input("\nGuess a letter: ")
+    if len(guess) != 1 and guess.isalpha():
+        print("Please only input one alphabetic character")
+    if guess not in word:
+        wrong_letters.append(guess)
+        for pic in hangman_pics:
+            pic
+    for index, letter in enumerate(word):
+        if letter != "_" and guess == letter:
+            blanks[index] = letter
+
+            
+    print(hangman)
+    print(f"You have {wrong_guess} tries left")
+    print("".join(blanks))
+
+print("\nGame over...")
 
 # Create a counter for how many tries a user has
-
+    
+            
 # Keep asking them for their guess until they won or lost
 
 # When they find a correct character, display the blank with the word

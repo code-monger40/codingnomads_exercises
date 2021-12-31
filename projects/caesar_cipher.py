@@ -1,31 +1,22 @@
-message = input("Enter message to encrypt: ")
+plain_text = input("Enter message to encrypt: ")
 shift = input("Enter in the shift number: ")
 
-# shift_num = 7
-# result = ""
+plain_text = plain_text.lower()
+encrypted = ""
 
-# alphabet = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"]
-# cipher = "XYZABCDEFGHIJKLMNOPQRSTUVW"
+for char in plain_text:
+    if char.islower():
+        char_index = ord(char) - ord('a')
+        # shift the current character by key positions
+        char_shift = (char_index - shift) % 26 + ord('a')
+        c_new = chr(char_shift)
+        encrypted += c_new
 
-message = message.lower()
-int(shift)
-data = list(message)
-print(data)
-for index, char in enumerate(data):
-    data[index] = chr((ord(char) + shift) % 26)
-    output = ''.join(data)
-print(output)
-
-# print(message - shift % 26)
-
-# for index, letter in enumerate(alphabet):
-#     result += index + shift_num
-
-# print(result)
-
-# input=raw_input('Input text here: ')
-#     data = list(input)
-#     for i, char in enumerate(data):
-#         data[i] = chr((ord(char) + shift) % 26)
+print(f"Plain text message: {plain_text}")
+print(f"Caesar cipher encrypted: {encrypted}")
+# input=input('Input text here: ')
+# data = list(input)
+# for i, char in enumerate(data):
+#     data[i] = chr((ord(char) + i) % 26)
 #     output = ''.join(data)
-#     return output
+# print(output)
