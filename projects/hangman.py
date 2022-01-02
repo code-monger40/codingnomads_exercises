@@ -63,13 +63,15 @@ hangman_pics = ['''
 =========''']
 word = "district"
 blanks = len(word) * ["_ "]
-tries = 7
+tries = 6
 wrong_letters = []
 hangman = [""]
 print("".join(blanks))
 
-for i in hangman_pics[l]:
-    print()
+print(type(blanks))
+
+# for i in hangman_pics[l]:
+#     print()
 
 while len(wrong_letters) != tries:
     word = "district"
@@ -78,18 +80,23 @@ while len(wrong_letters) != tries:
         print("Please only input one alphabetic character")
     if guess not in word:
         wrong_letters.append(guess)
-        for pic in hangman_pics:
-            pic
+        print(hangman_pics[len(wrong_letters)])
     for index, letter in enumerate(word):
         if letter != "_" and guess == letter:
             blanks[index] = letter
+    wins = True
+    for strings in blanks:
+      if "_" in strings:
+        wins = False
+    if wins == True:
+      print("\nYOU WON!")
+      print(f"{word}")
+      break
 
-            
-    print(hangman)
-    print(f"You have {wrong_guess} tries left")
     print("".join(blanks))
 
-print("\nGame over...")
+if len(wrong_letters) == tries:
+  print("\nGame over...")
 
 # Create a counter for how many tries a user has
     
