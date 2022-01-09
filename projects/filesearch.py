@@ -14,3 +14,20 @@
 # Start with a small folder to make it easy to check whether your program is
 # working correctly. Then search a bigger folder.
 # This program should work for any specified folder on your computer.
+
+from pathlib import Path
+
+# Specify folder to search two levels deep subfolders
+location = input("Enter path location: ")
+location = Path(location)
+for folder in location.iterdir():
+    print(file)
+    for sub 
+# List all jpg files contained in there and subfolders
+# 
+# 
+# 
+# 
+# 
+# 
+# #
