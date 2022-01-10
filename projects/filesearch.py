@@ -17,17 +17,14 @@
 
 from pathlib import Path
 
-# Specify folder to search two levels deep subfolders
+# Specify the folder
 location = input("Enter path location: ")
+# Specify the file type we want to search for
+file_type = input("Input file type (ie .jpeg): ")
+# Convert input to Path
 location = Path(location)
-for folder in location.iterdir():
-    print(file)
-    for sub 
-# List all jpg files contained in there and subfolders
-# 
-# 
-# 
-# 
-# 
-# 
-# #
+# rglob iterates through directory including subfolders
+for folder in location.rglob("*"):
+    # if the suffix is equal to the input file type specified print the results 
+    if folder.suffix == file_type:
+        print(folder)
